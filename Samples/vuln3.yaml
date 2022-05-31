@@ -1,9 +1,9 @@
 apiVersion: policy/v1beta1
 kind: PodSecurityPolicy
 metadata:
-  name: privileged
   annotations:
     container.apparmor.security.beta.kubernetes.io/allowedProfileNames: '*'
+  name: privileged
   spec:
     hostIPC: true
     hostNetwork: true
