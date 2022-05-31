@@ -15,6 +15,4 @@ spec:
     volumeMounts:
       - mountPath: /writeable/location/here
       name: volName
-    volumes:
-      - emptyDir: {}
-      name: volName
+  
