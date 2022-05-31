@@ -4,15 +4,14 @@ metadata:
   labels:
     app: web
     name: web
-spec:
-  containers:
-  - command: ["sleep"]
-  args: ["999"]
-  image: ubuntu:latest
-  name: web
-  securityContext:
-    readOnlyRootFilesystem: false
-    volumeMounts:
+  spec:
+    containers:
+    - args: ["999"] 
+      command: ["sleep"]
+      image: ubuntu:latest
+      name: web
+      securityContext:
+        readOnlyRootFilesystem: false
+      volumeMounts:
       - mountPath: /writeable/location/here
-      name: volName
-  
+        name: volName
