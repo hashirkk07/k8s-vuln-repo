@@ -4,14 +4,15 @@ metadata:
   name: privileged
   annotations:
     container.apparmor.security.beta.kubernetes.io/allowedProfileNames: '*'
-spec:
-  privileged: true
-  allowPrivilegeEscalation: true
-  capabilities:
-    add:
-     - CAP_NET_RAW
-  volumes:
-  - '*'
-  hostNetwork: true
-  hostIPC: true
-  hostPID: true
+  spec:
+    hostIPC: true
+    hostNetwork: true
+    hostPID: true
+    securityContext:
+      allowPrivilegeEscalation: true
+      capabilities:
+        add:
+         - CAP_NET_RAW
+      privileged: true
+    volumes:
+      - '*'
